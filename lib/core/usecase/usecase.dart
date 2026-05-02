@@ -9,6 +9,8 @@ abstract class UseCase<ResponseType, RequestParams> {
 }
 
 class NoParams extends Equatable {
+  const NoParams();
+
   @override
   List<Object> get props => [];
 }

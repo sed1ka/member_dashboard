@@ -39,10 +39,6 @@ class PurchaseRemoteDataSourceImpl implements PurchaseRemoteDataSource {
           .map((json) => TransactionModel.fromJson(json))
           .toList();
 
-      if (transactions.isEmpty) {
-        throw ExpectedEmptyData(message: 'No transaction found.');
-      }
-
       // 2. Apply filtering
       transactions = transactions.where((trx) {
         final categoryMatch = category == 'All' || trx.category == category;
@@ -50,6 +46,10 @@ class PurchaseRemoteDataSourceImpl implements PurchaseRemoteDataSource {
         final monthMatch = month == 0 || trx.date?.month == month;
         return categoryMatch && statusMatch && monthMatch;
       }).toList();
+
+      if (transactions.isEmpty) {
+        throw ExpectedEmptyData(message: 'No transaction found.');
+      }
 
       // 3. Sort by date descending (Newest first)
       transactions.sort((a, b) {

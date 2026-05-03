@@ -234,20 +234,33 @@ class _FilterChip extends StatelessWidget {
       onPressed: () {
         showModalBottomSheet(
           context: context,
-          builder: (context) => ListView(
-            shrinkWrap: true,
-            children: options
-                .map(
-                  (opt) => ListTile(
-                    title: Text(opt),
-                    selected: opt == selectedValue,
-                    onTap: () {
-                      onSelected(opt);
-                      Navigator.pop(context);
-                    },
-                  ),
-                )
-                .toList(),
+          builder: (context) => Column(
+            children: [
+              const SizedBox(height: LayoutSize.pSmall),
+              Padding(
+                padding: const EdgeInsets.all(
+                  LayoutSize.pMedium,
+                ),
+                child: Text('Select $label'),
+              ),
+              Flexible(
+                child: ListView(
+                  shrinkWrap: true,
+                  children: options
+                      .map(
+                        (opt) => ListTile(
+                          title: Text(opt),
+                          selected: opt == selectedValue,
+                          onTap: () {
+                            onSelected(opt);
+                            Navigator.pop(context);
+                          },
+                        ),
+                      )
+                      .toList(),
+                ),
+              ),
+            ],
           ),
         );
       },

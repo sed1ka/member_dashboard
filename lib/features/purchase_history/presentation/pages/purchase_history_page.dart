@@ -24,7 +24,9 @@ class PurchaseHistoryPage extends StatefulWidget {
 }
 
 class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
-  final EasyRefreshController refreshController = EasyRefreshController();
+  final EasyRefreshController refreshController = EasyRefreshController(
+    controlFinishRefresh: true,
+  );
   final purchaseBloc = di<PurchaseHistoryBloc>();
   final filterBloc = di<PurchaseFilterBloc>();
 
@@ -38,6 +40,8 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
   @override
   void dispose() {
     refreshController.dispose();
+    purchaseBloc.close();
+    filterBloc.close();
     super.dispose();
   }
 
@@ -46,7 +50,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
     return BlocListener(
       bloc: purchaseBloc,
       listener: (_, state) {
-        if(state is! Loading) refreshController.stopRefresh();
+        if (state is! Loading) refreshController.stopRefresh();
       },
       child: Stack(
         children: [
@@ -62,24 +66,33 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                 ),
 
                 Flexible(
-                  child: BlocBuilder<PurchaseHistoryBloc, GeneralState<List<TransactionEntity>>>(
-                    bloc: purchaseBloc,
-                    builder: (context, state) => AppRefresher(
-                      controller: refreshController,
-                      onRefresh: ()=> purchaseBloc.add(PurchaseHistoryFetch()),
-                      child: TransactionSection(
-                        state: state,
-                        onRetry: () => purchaseBloc.add(const PurchaseHistoryFetch()),
+                  child:
+                      BlocBuilder<
+                        PurchaseHistoryBloc,
+                        GeneralState<List<TransactionEntity>>
+                      >(
+                        bloc: purchaseBloc,
+                        builder: (context, state) => AppRefresher(
+                          controller: refreshController,
+                          onRefresh: () =>
+                              purchaseBloc.add(PurchaseHistoryFetch()),
+                          child: TransactionSection(
+                            state: state,
+                            onRetry: () =>
+                                purchaseBloc.add(const PurchaseHistoryFetch()),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
                 ),
               ],
             ),
           ),
 
           // Loading UI Overlay
-          BlocBuilder<PurchaseHistoryBloc, GeneralState<List<TransactionEntity>>>(
+          BlocBuilder<
+            PurchaseHistoryBloc,
+            GeneralState<List<TransactionEntity>>
+          >(
             bloc: purchaseBloc,
             builder: (context, state) {
               switch (state) {

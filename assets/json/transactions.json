@@ -1,0 +1,107 @@
+[
+  {
+    "id": "TRX-015",
+    "date": 1714645800000,
+    "category": "Groceries",
+    "amount": 150000.0,
+    "status": "Paid"
+  },
+  {
+    "id": "TRX-014",
+    "date": 1714578300000,
+    "category": "Electronics",
+    "amount": 2500000.0,
+    "status": "Pending"
+  },
+  {
+    "id": "TRX-013",
+    "date": 1714294800000,
+    "category": "Fashion",
+    "amount": 450000.0,
+    "status": "Paid"
+  },
+  {
+    "id": "TRX-012",
+    "date": 1714054800000,
+    "category": "Health",
+    "amount": 120000.0,
+    "status": "Canceled"
+  },
+  {
+    "id": "TRX-011",
+    "date": 1713611400000,
+    "category": "Groceries",
+    "amount": 320000.0,
+    "status": "Paid"
+  },
+  {
+    "id": "TRX-010",
+    "date": 1713199800000,
+    "category": "Electronics",
+    "amount": 1200000.0,
+    "status": "Paid"
+  },
+  {
+    "id": "TRX-009",
+    "date": 1711372500000,
+    "category": "Fashion",
+    "amount": 550000.0,
+    "status": "Paid"
+  },
+  {
+    "id": "TRX-008",
+    "date": 1710928800000,
+    "category": "Health",
+    "amount": 85000.0,
+    "status": "Paid"
+  },
+  {
+    "id": "TRX-007",
+    "date": 1710505800000,
+    "category": "Groceries",
+    "amount": 210000.0,
+    "status": "Pending"
+  },
+  {
+    "id": "TRX-006",
+    "date": 1709113500000,
+    "category": "Electronics",
+    "amount": 3500000.0,
+    "status": "Canceled"
+  },
+  {
+    "id": "TRX-005",
+    "date": 1708442400000,
+    "category": "Fashion",
+    "amount": 600000.0,
+    "status": "Paid"
+  },
+  {
+    "id": "TRX-004",
+    "date": 1707574200000,
+    "category": "Health",
+    "amount": 150000.0,
+    "status": "Paid"
+  },
+  {
+    "id": "TRX-003",
+    "date": 1706180400000,
+    "category": "Groceries",
+    "amount": 180000.0,
+    "status": "Paid"
+  },
+  {
+    "id": "TRX-002",
+    "date": 1705325400000,
+    "category": "Electronics",
+    "amount": 900000.0,
+    "status": "Paid"
+  },
+  {
+    "id": "TRX-001",
+    "date": 1704448800000,
+    "category": "Fashion",
+    "amount": 300000.0,
+    "status": "Paid"
+  }
+]

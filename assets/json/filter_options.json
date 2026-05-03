@@ -1,0 +1,12 @@
+{
+  "categories": ["All", "Groceries", "Electronics", "Fashion", "Health"],
+  "statuses": ["All", "Paid", "Pending", "Canceled"],
+  "months": [
+    {"name": "All", "value": 0},
+    {"name": "January", "value": 1},
+    {"name": "February", "value": 2},
+    {"name": "March", "value": 3},
+    {"name": "April", "value": 4},
+    {"name": "May", "value": 5}
+  ]
+}

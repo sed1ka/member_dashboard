@@ -24,7 +24,10 @@ class LogoutDialog {
             backgroundColor: Theme.of(context).colorScheme.error,
             foregroundColor: Theme.of(context).colorScheme.onError,
           ),
-          child: const Text('Logout'),
+          child: const Text(
+            'Logout',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+          ),
         ),
       ],
     );

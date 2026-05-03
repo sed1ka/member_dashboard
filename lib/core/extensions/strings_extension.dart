@@ -1,4 +1,4 @@
-extension KreduitStringManipulations on String {
+extension StringsExtension on String {
   /// Converts the string by capitalizing the first character.
   ///
   /// By default, preserves the original casing of the remaining characters.

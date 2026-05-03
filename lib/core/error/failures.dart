@@ -11,7 +11,8 @@ abstract class Failure {
 }
 
 class ExpectedEmptyData extends Failure {
-  ExpectedEmptyData() : super(message: 'Data empty');
+  ExpectedEmptyData({String? message})
+    : super(message: message ?? 'Data empty');
 }
 
 /// == RESPONSE ERROR == ///
@@ -34,7 +35,8 @@ class EmptyDataFailure extends ResponseFailure {
 
 /// == APP BUG ERROR == ///
 class AppBugFailure extends Failure {
-  AppBugFailure() : super(message: AppStrings.generalError);
+  AppBugFailure({String? message, super.detailMessage})
+    : super(message: message ?? AppStrings.generalError);
 
   @override
   bool get shouldReport => true;
@@ -67,4 +69,79 @@ class ReadStorageFailure extends StorageFailure {
 
 class DeleteStorageFailure extends StorageFailure {
   DeleteStorageFailure({super.message});
+}
+
+/// == CLIENT ERROR == ///
+class ClientFailure extends Failure {
+  ClientFailure({String? message, super.detailMessage})
+    : super(message: message ?? AppStrings.generalError);
+}
+
+/// Status Code: 400
+class BadRequestFailure extends ClientFailure {
+  BadRequestFailure({String? message})
+    : super(message: message ?? AppStrings.generalError);
+}
+
+/// Status Code: 401
+class UnauthFailure extends ClientFailure {
+  UnauthFailure({String? message})
+    : super(message: message ?? AppStrings.invalidLogin);
+}
+
+/// Status Code 403
+class ForbiddenFailure extends ClientFailure {
+  ForbiddenFailure({String? message})
+    : super(message: message ?? AppStrings.generalError);
+}
+
+/// Status Code 404
+class NotFoundFailure extends ClientFailure {
+  NotFoundFailure({String? message})
+    : super(message: message ?? AppStrings.generalError);
+}
+
+/// Status Code 405
+class MethodNotAllowedFailure extends ClientFailure {
+  MethodNotAllowedFailure() : super(message: AppStrings.generalError);
+}
+
+/// Status Code: 408
+class RequestTimeoutFailure extends ClientFailure {
+  RequestTimeoutFailure() : super(message: AppStrings.generalError);
+}
+
+/// Status Code: 409
+class ConflictFailure extends ClientFailure {
+  ConflictFailure() : super(message: AppStrings.generalError);
+}
+
+/// Status Code 412
+class PreConditionFailedFailure extends ClientFailure {
+  PreConditionFailedFailure({String? message})
+    : super(message: message ?? AppStrings.generalError);
+}
+
+/// Status Code: 422
+class UnprocessableEntityFailure extends ClientFailure {
+  UnprocessableEntityFailure({String? message})
+    : super(message: message ?? AppStrings.generalError);
+}
+
+/// Status Code: 423
+class LockedFailure extends ClientFailure {
+  LockedFailure({String? message})
+    : super(message: message ?? AppStrings.generalError);
+}
+
+/// Status Code: 428
+class PreConditionRequiredFailure extends ClientFailure {
+  PreConditionRequiredFailure({String? message})
+    : super(message: message ?? AppStrings.generalError);
+}
+
+/// Status Code: 429
+class ToManyRequestFailure extends ClientFailure {
+  ToManyRequestFailure({String? message})
+    : super(message: message ?? AppStrings.generalError);
 }

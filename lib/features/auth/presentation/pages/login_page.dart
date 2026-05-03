@@ -31,6 +31,7 @@ class _LoginPageState extends State<LoginPage> {
   void dispose() {
     memberIdController.dispose();
     passwordController.dispose();
+    loginBloc.close();
     super.dispose();
   }
 

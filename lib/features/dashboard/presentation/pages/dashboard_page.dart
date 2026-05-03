@@ -51,6 +51,8 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   void dispose() {
     refreshController.dispose();
+    memberBloc.close();
+    purchaseBloc.close();
     super.dispose();
   }
 

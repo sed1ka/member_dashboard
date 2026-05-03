@@ -25,6 +25,12 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   @override
+  void dispose() {
+    sessionBloc.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocListener<SessionBloc, GeneralState>(
       bloc: sessionBloc,

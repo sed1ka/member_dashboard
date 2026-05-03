@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:hdi_mini_test/core/error/failures.dart';
 
-
 sealed class GeneralState<T> extends Equatable {
   const GeneralState();
 

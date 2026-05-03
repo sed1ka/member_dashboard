@@ -29,9 +29,8 @@ class _MainScaffoldState extends State<MainScaffold> {
     return BlocConsumer<LogoutBloc, GeneralState<void>>(
       bloc: logoutBloc,
       listener: (context, state) {
-        if (state is Success) {
-          const LoginRoute().go(context);
-        }
+        // Regardless of the state (except Initial), navigate to the login page
+        if (state is! Initial) const LoginRoute().go(context);
       },
       builder: (context, state) => AppLoadingScreen(
         isLoading: state is Loading,

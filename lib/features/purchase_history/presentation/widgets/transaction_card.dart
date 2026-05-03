@@ -105,11 +105,47 @@ class TransactionCardPlaceholder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
-      margin: EdgeInsets.only(bottom: LayoutSize.pMedium),
+    return Card(
+      margin: const EdgeInsets.only(bottom: LayoutSize.pMedium),
       child: Padding(
-        padding: EdgeInsets.all(LayoutSize.pMedium),
-        child: SizedBox(height: 60, width: double.infinity),
+        padding: const EdgeInsets.all(LayoutSize.pMedium),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'xxxxxx',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                _StatusBadge(status: 'xxxxx'),
+              ],
+            ),
+            const SizedBox(height: LayoutSize.pSmall),
+            Text(
+              'xxxxxx',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            const SizedBox(height: LayoutSize.pSmall),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'xx xxx xxxx',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                Text(
+                  'Rp xx.xxx',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

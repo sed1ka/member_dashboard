@@ -51,12 +51,16 @@ class _MobileLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return switch (state) {
-      Initial() || Loading() => Skeletonizer(
-        enabled: true,
-        child: Column(
-          children: List.generate(
-            4,
-            (_) => const TransactionCardPlaceholder(),
+      Initial() || Loading() => SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        child: Skeletonizer(
+          enabled: true,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: List.generate(
+              4,
+              (_) => const TransactionCardPlaceholder(),
+            ),
           ),
         ),
       ),

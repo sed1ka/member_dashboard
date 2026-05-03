@@ -7,19 +7,20 @@ class App extends StatelessWidget {
   const App({super.key});
 
   static final ValueNotifier<ThemeMode> themeNotifier =
-      ValueNotifier(ThemeMode.system);
+  ValueNotifier(ThemeMode.system);
 
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: themeNotifier,
       builder: (_, ThemeMode currentMode, _) {
-        return MaterialApp(
+        return MaterialApp.router(
           title: 'HDI Member App',
           debugShowCheckedModeBanner: false,
           theme: AppTheme.light,
           darkTheme: AppTheme.dark,
           themeMode: currentMode,
+          routerConfig: router,
           builder: (context, child) {
             return LayoutBuilder(
               builder: (context, constraints) {

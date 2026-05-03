@@ -9,7 +9,7 @@ final class AppColors {
 
   // Neutral Colors (Light Mode)
   static const Color backgroundLight = Color(0xFFF5F5F5);
-  static const Color surfaceLight = Colors.white;
+  static const Color surfaceLight = Color(0xFFE1E1E1);
   static const Color textPrimaryLight = Color(0xFF212121);
   static const Color textSecondaryLight = Color(0xFF757575);
 

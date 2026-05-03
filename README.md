@@ -47,6 +47,20 @@ flutter run
 
 ---
 
+#### 📦 APK Build (Android)
+
+You can generate the APK file directly from this project using the following command:
+```
+flutter build apk --release
+```
+
+After the build is completed, the APK file can be found at:
+```
+build/app/outputs/flutter-apk/app-release.apk
+```
+
+---
+
 ### 📚 Packages Used
 
 #### Dependencies

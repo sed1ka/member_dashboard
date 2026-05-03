@@ -3,22 +3,28 @@
 ### 🚀 Flutter Version
 
 This project was developed using:
-
+```
 Flutter 3.41.9
-
+```
 ---
 
 ### 📦 Installation
 
 1. Clone this repository:
+   ```
    git clone <your-repo-url>
    cd <project-folder>
+   ```
 
-2. Install dependencies:
+3. Install dependencies:
+   ```
    flutter pub get
+   ```
 
-3. Run code generation (required for go_router_builder):
+4. Run code generation (required for go_router_builder):
+   ```
    dart run build_runner build --delete-conflicting-outputs
+   ```
 
 ---
 
@@ -30,10 +36,14 @@ This project has been tested on:
 * 📱 Android Device
 
 Run the app with:
+```
 flutter run -d chrome
+```
 
 or:
+```
 flutter run
+```
 
 ---
 
@@ -66,7 +76,7 @@ flutter run
 
 * The project does not use a real backend API.
 * All data is sourced from mock JSON and treated as a remote API.
-* All data sources are implemented as remote.
+* All data sources are implemented remotely.
 
 Tradeoffs:
 
@@ -79,14 +89,16 @@ Tradeoffs:
 ### 🧪 Testing
 
 * Unit test only available for:
-  core/local_secure_storage
+  ```core/local_secure_storage```
 
 Run:
+```
 flutter test
+```
 
 Notes:
 
-* Using mocktail
+* Using ```mocktail```
 * Not full coverage due to time limitation
 
 ---
@@ -101,8 +113,8 @@ Clean Architecture:
 
 Using:
 
-* get_it (Dependency Injection)
-* bloc (State Management)
+* ``get_it`` (Dependency Injection)
+* ``bloc`` (State Management)
 
 ---
 ### ⚠️ Additional Notes

@@ -44,8 +44,8 @@ class AuthInjection {
     di.registerFactory<LoginBloc>(
       () => LoginBloc(loginUseCase: di<LoginUseCase>()),
     );
-    di.registerFactory<LogoutBloc>(
-      () => LogoutBloc(logoutUseCase: di<LogoutUseCase>()),
+    di.registerSingleton<LogoutBloc>(
+      LogoutBloc(logoutUseCase: di<LogoutUseCase>()),
     );
     di.registerFactory<SessionBloc>(
       () => SessionBloc(getSessionUseCase: di<GetSessionUseCase>()),

@@ -78,7 +78,7 @@ class _TableRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: LayoutSize.pLarge,
+        horizontal: LayoutSize.pMedium,
         vertical: LayoutSize.pLarge,
       ),
       decoration: const BoxDecoration(
